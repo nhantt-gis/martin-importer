@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  build:
+    desc: Build the app image
+    cmds:
+      - docker compose build app
+
+  up:
+    desc: Build and start the full stack
+    cmds:
+      - docker compose up -d
+
+  down:
+    desc: Stop the stack
+    cmds:
+      - docker compose down -v
+
+  logs:
+    desc: Follow service logs
+    cmds:
+      - docker compose logs -f db app martin

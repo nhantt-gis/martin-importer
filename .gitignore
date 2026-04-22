@@ -1,0 +1,11 @@
+# Environment
+.venv
+.env
+
+# Cache and build
+__pycache__
+.pytest_cache
+.mypy_cache
+
+# Data
+data

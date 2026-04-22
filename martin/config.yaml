@@ -1,0 +1,28 @@
+listen_addresses: "0.0.0.0:3000"
+keep_alive: 75
+cors: true
+web_ui: enable-for-all
+on_invalid: abort
+worker_processes: 8
+
+cache:
+  size_mb: 0
+  tile_size_mb: 0
+
+postgres:
+  connection_string: "${MARTIN_DATABASE_URL:-postgres://postgres:postgres@db:5432/martin}"
+  default_srid: 3857
+  pool_size: 20
+  auto_bounds: quick
+  auto_publish:
+    from_schemas:
+      - public
+    tables: false
+    functions:
+      from_schemas:
+        - public
+      source_id_format: "{function}"
+
+styles:
+  paths:
+    - /styles
