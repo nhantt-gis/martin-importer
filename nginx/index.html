@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MapLibre GL JS - Martin Tileserver</title>
+
+    <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css" rel="stylesheet" />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script>
+      const map = new maplibregl.Map({
+        container: 'map',
+        style: 'http://172.16.9.53:3444/style/gtelmaps-streets-v1',
+        center: [105.8342, 21.0278],
+        zoom: 10,
+        hash: true,
+      });
+
+      map.addControl(new maplibregl.NavigationControl());
+    </script>
+  </body>
+</html>
