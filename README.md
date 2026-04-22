@@ -29,12 +29,12 @@ Useful checks:
 
 ```bash
 # Martin
-curl http://localhost:3000/
-curl http://localhost:3000/catalog
+curl http://172.16.9.53:3444/
+curl http://172.16.9.53:3444/catalog
 
 # API
-curl http://localhost:8000/healthz
-curl http://localhost:8000/tables
+curl http://172.16.9.53:8444/healthz
+curl http://172.16.9.53:8444/tables
 ```
 
 ## Migrations
@@ -47,28 +47,28 @@ docker compose run --rm app uv run --project /workspace/app martin-importer db m
 
 ## Import API
 
-FastAPI docs are available at `http://localhost:8000/docs`.
+FastAPI docs are available at `http://172.16.9.53:8444/docs`.
 
 Examples:
 
 ```bash
 # Truncate existing data before import
-curl -X POST http://localhost:8000/tables/vn_admin_pt/truncate
+curl -X POST http://172.16.9.53:8444/tables/vn_admin_pt/truncate
 
 # Import data with auto-creating table if it doesn't exist
-curl -X POST http://localhost:8000/imports \
+curl -X POST http://172.16.9.53:8444/imports \
   -F table=vn_admin_pt \
   -F mode=replace \
   -F file=@/path/to/new_data.gpkg \
   -F source_layer=layer_name
 
 # Append new data to existing table
-curl -X POST http://localhost:8000/tables/vn_admin_pt/append \
+curl -X POST http://172.16.9.53:8444/tables/vn_admin_pt/append \
   -F file=@/path/to/new_data.gpkg \
   -F source_layer=layer_name
 
 # Replace entire table with new data from a layer
-curl -X POST http://localhost:8000/tables/vn_admin_pt/replace \
+curl -X POST http://172.16.9.53:8444/tables/vn_admin_pt/replace \
   -F file=@/path/to/new_data.gpkg \
   -F source_layer=layer_name
 ```
