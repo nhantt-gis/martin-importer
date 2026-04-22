@@ -36,7 +36,7 @@
     },
     "gtelmaps-extras": {
       "type": "vector",
-      "url": "/layer_vn_admin_ln,layer_vn_admin_pt,layer_vn_islands_pg,layer_vn_islands_pt,layer_wld_boundary_pg,layer_wld_boundary_ln"
+      "url": "http://localhost:3000/layer_vn_admin_ln,layer_vn_admin_pt,layer_vn_islands_pg,layer_vn_islands_pt,layer_wld_boundary_pg,layer_wld_boundary_ln"
     }
   },
   "sprite": "https://maps.ots.vn/api/styles/v1/gtelmaps-streets-v1/sprite?apikey=NkJ7pLZ3rA5tXvW2cE0KdQ9oIi4CVY8Ox",
@@ -6179,7 +6179,7 @@
     {
       "id": "Ward labels - VN",
       "type": "symbol",
-      "source": "gtelmaps",
+      "source": "gtelmaps-extras",
       "source-layer": "vn_admin_pt",
       "minzoom": 10,
       "filter": ["all", ["==", "level_num", 8]],
@@ -6208,7 +6208,7 @@
     {
       "id": "Province labels - VN",
       "type": "symbol",
-      "source": "gtelmaps",
+      "source": "gtelmaps-extras",
       "source-layer": "vn_admin_pt",
       "minzoom": 4,
       "filter": [
@@ -6250,7 +6250,7 @@
     {
       "id": "Central city labels - VN",
       "type": "symbol",
-      "source": "gtelmaps",
+      "source": "gtelmaps-extras",
       "source-layer": "vn_admin_pt",
       "minzoom": 4,
       "filter": [
@@ -6291,7 +6291,7 @@
     {
       "id": "Capital city labels - VN",
       "type": "symbol",
-      "source": "gtelmaps",
+      "source": "gtelmaps-extras",
       "source-layer": "vn_admin_pt",
       "minzoom": 4,
       "filter": [

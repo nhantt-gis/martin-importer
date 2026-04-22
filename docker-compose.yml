@@ -48,3 +48,14 @@ services:
     volumes:
       - ./martin/config.yaml:/config.yaml:ro
       - ./martin/styles:/styles:ro
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    depends_on:
+      - martin
+    ports:
+      - "${WEB_PORT:-8080}:80"
+    volumes:
+      - ./nginx/index.html:/usr/share/nginx/html/index.html:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
