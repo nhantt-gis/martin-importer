@@ -25,4 +25,4 @@ postgres:
 
 styles:
   paths:
-    - /styles
+    - /data/styles

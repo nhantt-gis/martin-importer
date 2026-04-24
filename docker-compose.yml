@@ -42,12 +42,12 @@ services:
     #     condition: service_healthy
     environment:
       MARTIN_DATABASE_URL: ${MARTIN_DATABASE_URL:-postgres://postgres:postgres@db:5432/martin}
-    command: ["--config", "/config.yaml"]
+    command: ["--config", "/etc/martin/config.yaml"]
     ports:
       - "${MARTIN_PORT:-3000}:3000"
     volumes:
-      - ./martin/config.yaml:/config.yaml:ro
-      - ./martin/styles:/styles:ro
+      - ./martin/config.yaml:/etc/martin/config.yaml:ro
+      - ./martin/styles:/data/styles:ro
 
   nginx:
     image: nginx:1.27-alpine
